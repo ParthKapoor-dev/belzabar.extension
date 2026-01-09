@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Method Title Updater",
+  "version": "1.0.0",
+  "description": "Appends the method name from the automation designer to the page title",
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://nsm-dev.nc.verifi.dev/automation-designer/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://nsm-dev.nc.verifi.dev/automation-designer/*"
+      ],
+      "js": ["content-script.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
