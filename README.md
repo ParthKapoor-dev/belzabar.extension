@@ -1,26 +1,54 @@
-# Method Title Updater
+# Belzabar Extension
 
-Browser extension that appends the automation designer method name to the page title.
+Browser extension for Service Designer automation tools that enhances the testing workflow.
 
-## Format
+## Features
 
-Title becomes: `AD: <method-name>`
+### 📝 Title Updater
+- Automatically appends the current method name to the page title
+- Format: `Base Title – method.name`
+- Helps identify which method you're currently working on
 
-Example: `AD: vin.lookup`
+### ⌨️ Keyboard Shortcuts
+- **Ctrl + Shift + Enter**: Trigger the "Run Test" button from anywhere on the page
+- Works even when not focused on form elements
+- Instant test execution without mouse navigation
+
+### 📋 JSON Input Editor
+- Click the "📋 JSON" button to open a modal editor
+- Edit all input parameters as formatted JSON
+- Real-time synchronization back to the form
+- Type conversion (Text, Number, Boolean, JSON, etc.)
+- Mandatory field indicators
+- Input validation and error handling
+
+## Example Usage
+
+When working on a method called `vin.lookup`:
+- Page title becomes: `Service Designer – vin.lookup`
+- Press Ctrl+Shift+Enter to run tests instantly
+- Click "📋 JSON" to bulk-edit all input parameters in a clean interface
 
 ## Installation
 
-### Firefox
-1. Open `about:debugging`
-2. Click "This Firefox"
-3. Click "Load Temporary Add-on"
-4. Select `manifest.json`
+### Browser Extension Setup
+1. Build the extension: `bun run build`
+2. Load as unpacked extension in your browser:
 
-### Chromium
-1. Open `chrome://extensions`
-2. Enable "Developer mode"
-3. Click "Load unpacked"
-4. Select the extension folder
+#### Firefox
+- Open `about:debugging`
+- Click "This Firefox" → "Load Temporary Add-on"
+- Select the extension folder
+
+#### Chromium (Chrome/Edge)
+- Open `chrome://extensions`
+- Enable "Developer mode"
+- Click "Load unpacked"
+- Select the extension folder
+
+### Target Environment
+- Works on: `https://nsm-dev.nc.verifi.dev/automation-designer/*`
+- Requires Service Designer interface to function
 
 ## Source
 
