@@ -44,40 +44,48 @@ export function findInputsSection() {
 
 export function createJSONButton() {
   if (state.jsonButtonEl) return state.jsonButtonEl;
-
   const button = document.createElement('button');
   button.textContent = '📋 JSON';
   button.setAttribute('title', 'Edit inputs as JSON');
   button.id = 'sdExtensionJSONButton';
   
   Object.assign(button.style, {
-    padding: '6px 12px',
-    background: '#3b82f6',
+    padding: '8px 16px',
+    background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
     color: '#ffffff',
-    border: 'none',
-    borderRadius: '4px',
+    border: '1px solid rgba(59, 130, 246, 0.5)',
+    borderRadius: '8px',
     fontSize: '13px',
-    fontWeight: '500',
+    fontWeight: '600',
     cursor: 'pointer',
     marginLeft: '12px',
-    transition: 'background 150ms ease'
+    transition: 'all 200ms ease',
+    boxShadow: '0 4px 12px rgba(59, 130, 246, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+    letterSpacing: '0.3px',
+    textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
+    position: 'relative',
+    overflow: 'hidden'
   });
-
+  
   button.addEventListener('mouseenter', () => {
-    button.style.background = '#2563eb';
+    button.style.background = 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)';
+    button.style.transform = 'translateY(-2px)';
+    button.style.boxShadow = '0 6px 16px rgba(59, 130, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15)';
   });
-
+  
   button.addEventListener('mouseleave', () => {
-    button.style.background = '#3b82f6';
+    button.style.background = 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)';
+    button.style.transform = 'translateY(0)';
+    button.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
   });
-
+  
   button.onclick = (e) => {
     e.preventDefault();
     e.stopPropagation();
     log('JSON button clicked');
     showModal();
   };
-
+  
   state.jsonButtonEl = button;
   return button;
 }

@@ -7,6 +7,6 @@ export function updateTitle() {
   if (!methodName || methodName === state.lastMethodName) return;
 
   state.lastMethodName = methodName;
-  const baseTitle = document.title.split(' – ')[0];
-  document.title = `${baseTitle} – ${methodName}`;
+  // const baseTitle = document.title.split(' – ')[0];
+  document.title = `${methodName}`;
 }
